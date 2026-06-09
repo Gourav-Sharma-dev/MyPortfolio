@@ -1,0 +1,131 @@
+<section id="hero" class="hero-section d-flex align-items-center">
+
+  <!-- Background animated blobs -->
+  <div class="hero-bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center min-vh-100 py-5">
+
+      <!-- Left: Text content -->
+      <div class="col-lg-7 order-2 order-lg-1">
+        <div class="hero-content">
+
+          <div class="hero-greeting mb-2 fade-in-up">
+            <span class="badge-greeting">👋 Hello, I'm</span>
+          </div>
+          <h1 class="hero-name mb-2 fade-in-up delay-1">
+            <span>
+              {{ typedNameText }}<span class="blinking-cursor">_</span>
+            </span>
+          </h1>
+
+          <div class="hero-title mb-3 fade-in-up delay-2">
+            <span class="typed-text">{{ data.personal.title }}</span>
+          </div>
+
+          <p class="hero-tagline mb-4 fade-in-up delay-3">
+            {{ data.personal.tagline }}
+          </p>
+
+          <p class="hero-summary mb-5 fade-in-up delay-4">
+            Crafting scalable enterprise solutions with <strong>ASP.NET Core</strong>,
+            <strong>Angular</strong>, <strong>Blazor</strong>, and <strong>MS SQL Server</strong>. Passionate about
+            Clean Architecture, Microservices Architecture, high-performance APIs, and meaningful user experiences.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="hero-actions d-flex flex-wrap gap-3 mb-3 fade-in-up delay-5">
+            <a href="#projects" class="btn btn-primary-custom px-4 py-2 rounded-pill">
+              <i class="bi bi-folder2-open me-2"></i>View Projects
+            </a>
+            <a [href]="data.personal.resumePreviewUrl" target="_blank" class="btn btn-outline-custom px-4 py-2 rounded-pill">
+              <i class="bi bi-eye me-2"></i>Preview Resume
+            </a>
+            <a [href]="data.personal.resumeUrl" target="_blank" class="btn btn-outline-custom px-4 py-2 rounded-pill">
+              <i class="bi bi-download me-2"></i>Download Resume
+            </a>
+            <a href="#contact" class="btn btn-ghost-custom px-4 py-2 rounded-pill">
+              <i class="bi bi-chat-dots me-2"></i>Hire Me
+            </a>
+          </div>
+
+          <!-- Social Links -->
+          <div class="hero-socials d-flex gap-3 fade-in-up delay-6">
+            <a [href]="data.personal.github" target="_blank" class="social-link" title="GitHub">
+              <i class="bi bi-github"></i>
+            </a>
+            <a [href]="data.personal.linkedin" target="_blank" class="social-link" title="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a [href]="'mailto:' + data.personal.email" class="social-link" title="Email">
+              <i class="bi bi-envelope-fill"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right: Avatar -->
+      <div class="col-lg-5 order-1 order-lg-2 d-flex justify-content-center mb-5 mb-lg-0">
+        <div class="hero-avatar-wrapper fade-in-up">
+          <div class="hero-avatar">
+
+            <!-- Profile photo with initials fallback -->
+            <div class="avatar-inner">
+              @if (imgError()) {
+              <span class="avatar-initials">GS</span>
+              } @else {
+              <img src="assets/profile.jpg" alt="Gourav Sharma" class="avatar-photo" (error)="imgError.set(true)" />
+              }
+            </div>
+
+            <div class="avatar-ring ring-1"></div>
+            <div class="avatar-ring ring-2"></div>
+
+            <!-- Floating tech badges -->
+            <div class="floating-badge badge-angular">
+              <i class="bi bi-triangle-fill me-1"></i>Angular
+            </div>
+            <div class="floating-badge badge-dotnet">
+              <i class="bi bi-server me-1"></i>.NET Core
+            </div>
+            <div class="floating-badge badge-sql">
+              <i class="bi bi-database-fill me-1"></i>SQL Server
+            </div>
+            <div class="floating-badge badge-blazor">
+              <i class="bi bi-database-fill me-1"></i>Blazor
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats row -->
+    <div class="row pb-5">
+      @for (stat of data.stats; track stat.label) {
+      <div class="col-6 col-md-3 mb-3">
+        <div class="stat-card text-center fade-in-up">
+          <i class="bi stat-icon mb-2" [class]="stat.icon"></i>
+          <div class="stat-value">{{ stat.value }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      </div>
+      }
+    </div>
+
+  </div>
+
+  <!-- Scroll down hint -->
+  <div class="scroll-hint">
+    <a href="#contact" class="scroll-down">
+      <i class="bi bi-chevron-double-down"></i>
+    </a>
+  </div>
+
+</section>

@@ -1,0 +1,61 @@
+/* ── Filter buttons ────────────────────────────────── */
+.filter-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 6px 16px;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* ── Skill card ────────────────────────────────────── */
+.skill-card {
+  padding: 20px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  transition: all 0.3s;
+  cursor: default;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 25px var(--accent-shadow);
+}
+
+/* ── Icons & images ────────────────────────────────── */
+.skill-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.skill-icon {
+  font-size: 2rem;
+  color: var(--accent);
+  display: block;
+}
+
+/* ── Labels ────────────────────────────────────────── */
+.skill-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.skill-cat-badge {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}

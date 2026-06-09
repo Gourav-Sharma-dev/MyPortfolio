@@ -1,0 +1,136 @@
+/* ── Project card ──────────────────────────────────── */
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 28px;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px var(--shadow);
+}
+
+.project-card.featured {
+  border-color: var(--accent);
+  border-width: 1.5px;
+}
+
+.project-card.featured:hover {
+  border-color: var(--accent);
+  box-shadow: 0 16px 40px var(--accent-shadow);
+}
+
+/* ── Card header elements ──────────────────────────── */
+.project-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+
+.project-type-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.type-freelance     { background: rgba(99, 102, 241, 0.12); color: #818CF8; }
+.type-professional  { background: rgba(16, 185, 129, 0.12); color: #10B981; }
+.type-personal      { background: rgba(245, 158, 11, 0.12);  color: #F59E0B; }
+
+.project-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.project-subtitle {
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.project-desc {
+  font-size: 0.87rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ── Highlights ────────────────────────────────────── */
+.highlights-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent2);
+}
+
+.highlights-list {
+  padding-left: 16px;
+  margin: 0;
+}
+
+.highlights-list li {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+/* ── Tech badges ───────────────────────────────────── */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-badge {
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+  border-radius: 8px;
+  padding: 3px 10px;
+  font-size: 0.73rem;
+  font-weight: 600;
+}
+
+/* ── Action buttons ────────────────────────────────── */
+.project-actions {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.btn-project-outline {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.btn-project-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-project-primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.btn-project-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}

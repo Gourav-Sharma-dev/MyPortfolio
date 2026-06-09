@@ -1,0 +1,64 @@
+.footer {
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  padding: 28px 0 20px;
+}
+
+/* ── Brand ─────────────────────────────────────────── */
+.brand-gs {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.brand-dot {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--accent2);
+}
+
+.footer-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ── Nav links ─────────────────────────────────────── */
+.footer-link {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: var(--accent);
+}
+
+/* ── Social icons ──────────────────────────────────── */
+.footer-social {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+}
+
+.footer-social:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* ── Copyright ─────────────────────────────────────── */
+.footer-copy {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}

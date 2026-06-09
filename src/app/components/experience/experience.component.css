@@ -1,0 +1,255 @@
+﻿/* 
+   PILL ROW — tab switcher
+ */
+.exp-pill-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.exp-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--card-bg);
+  border: 1.5px solid var(--border-color);
+  border-radius: 50px;
+  padding: 10px 22px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.exp-pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+.exp-pill.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 18px var(--accent-shadow);
+}
+
+.pill-year {
+  font-size: 0.73rem;
+  font-weight: 500;
+  opacity: 0.75;
+  margin-left: 4px;
+}
+
+/* 
+   EXPERIENCE CARD
+ */
+.exp-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  overflow: hidden;
+  animation: fadeSlide 0.35s ease;
+  box-shadow: 0 4px 30px var(--shadow);
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.exp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-job    { background: linear-gradient(135deg, rgba(99,102,241,0.07) 0%, transparent 60%); }
+.header-intern { background: linear-gradient(135deg, rgba(6,182,212,0.07) 0%, transparent 60%); }
+
+.exp-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.exp-logo-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.logo-job {
+  background: rgba(99,102,241,0.12);
+  color: var(--accent);
+  border: 1.5px solid var(--accent-border);
+}
+
+.logo-intern {
+  background: rgba(6,182,212,0.12);
+  color: var(--accent2);
+  border: 1.5px solid rgba(6,182,212,0.3);
+}
+
+.exp-role-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin-bottom: 5px;
+}
+
+.exp-company-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.82rem;
+}
+
+.exp-company-name { font-weight: 700; color: var(--accent); }
+.exp-location     { color: var(--text-muted); }
+.exp-period-text  { color: var(--text-muted); }
+.exp-sep          { color: var(--border-color); font-weight: 700; }
+
+.emp-badge {
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.badge-ft {
+  background: rgba(99,102,241,0.1);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+}
+
+.badge-int {
+  background: rgba(6,182,212,0.1);
+  color: var(--accent2);
+  border: 1px solid rgba(6,182,212,0.25);
+}
+
+.exp-body {
+  padding: 28px 28px 32px;
+}
+
+.exp-project-block {
+  background: var(--bg);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.exp-project-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.exp-project-name {
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.exp-project-desc {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.exp-contributions-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+
+.exp-contributions-label .bi-patch-check-fill { color: var(--accent); }
+
+.exp-points-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 32px;
+}
+
+@media (max-width: 640px) {
+  .exp-points-grid { grid-template-columns: 1fr; }
+  .exp-header      { flex-direction: column; align-items: flex-start; }
+}
+
+.exp-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.exp-check {
+  font-size: 1rem;
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* 
+   EDUCATION CARDS
+ */
+.edu-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 28px;
+  transition: all 0.3s;
+}
+
+.edu-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 30px var(--shadow);
+  transform: translateY(-3px);
+}
+
+.edu-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--accent);
+}
+
+.edu-degree { font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+.edu-inst   { font-size: 0.88rem; color: var(--accent); font-weight: 600; }
+.edu-meta   { font-size: 0.8rem; color: var(--text-muted); }
+.cgpa-badge { color: var(--accent2); font-weight: 600; }

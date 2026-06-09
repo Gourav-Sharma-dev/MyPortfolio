@@ -1,0 +1,44 @@
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-content d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <span class="brand-gs">GS</span><span class="brand-dot">.</span>
+        <span class="footer-name ms-2">Gourav Sharma</span>
+      </div>
+
+      <!-- Nav links -->
+      <div class="footer-links d-flex gap-3">
+        @for (item of navLinks; track item.label) {
+          <a [href]="'#' + item.id" class="footer-link">{{ item.label }}</a>
+        }
+      </div>
+
+      <!-- Social icons -->
+      <div class="footer-socials d-flex gap-3">
+        <a [href]="data.personal.github" target="_blank" class="footer-social">
+          <i class="bi bi-github"></i>
+        </a>
+        <a [href]="data.personal.linkedin" target="_blank" class="footer-social">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a [href]="'mailto:' + data.personal.email" class="footer-social">
+          <i class="bi bi-envelope-fill"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom text-center mt-3">
+      <span class="footer-copy">
+        © 2026 Gourav Sharma. Built with
+        <i class="bi bi-heart-fill text-danger"></i>
+        using Angular 21 + Bootstrap 5
+      </span>
+    </div>
+
+  </div>
+</footer>

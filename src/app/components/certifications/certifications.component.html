@@ -1,0 +1,50 @@
+<section id="certifications" class="section-pad section-alt">
+  <div class="container">
+
+    <div class="section-header text-center mb-5">
+      <span class="section-badge">Recognition</span>
+      <h2 class="section-title">Certifications & Achievements</h2>
+      <p class="section-subtitle">Professional credentials and notable accomplishments</p>
+    </div>
+
+    <!-- Certifications -->
+    <div class="row g-4 mb-5 justify-content-center">
+      @for (cert of data.certifications; track cert.name) {
+        <div class="col-md-4">
+          <div class="cert-card h-100 text-center">
+            <div class="cert-icon-wrap mb-3" [style.--cert-color]="cert.color">
+              <i class="bi" [class]="cert.icon"></i>
+            </div>
+            <h6 class="cert-name">
+              @if (cert.link) {
+                <a [href]="cert.link" class="text-decoration-none" target="_blank" rel="noopener noreferrer">{{ cert.name }}</a>
+              } @else {
+                {{ cert.name }}
+              }
+            </h6>
+            <div class="cert-issuer">{{ cert.issuer }}</div>
+            <div class="cert-year">
+              <i class="bi bi-calendar2-check me-1"></i>{{ cert.year }}
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Achievements -->
+    <div class="row g-4">
+      @for (ach of data.achievements; track ach.title) {
+        <div class="col-md-6 col-lg-3">
+          <div class="ach-card h-100" [style.--ach-color]="ach.color">
+            <div class="ach-icon-wrap mb-3">
+              <i class="bi" [class]="ach.icon"></i>
+            </div>
+            <h6 class="ach-title">{{ ach.title }}</h6>
+            <p class="ach-desc">{{ ach.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,108 @@
+<section id="contact" class="section-pad">
+  <div class="container">
+
+    <div class="section-header text-center mb-5">
+      <span class="section-badge">Get In Touch</span>
+      <h2 class="section-title">Contact Me</h2>
+      <p class="section-subtitle">Have a project in mind or want to discuss a role? Let's connect.</p>
+    </div>
+
+    <div class="row g-5 justify-content-center">
+
+      <!-- Contact Info Column -->
+      <div class="col-lg-4">
+        <div class="contact-info-block mb-4">
+          <h5 class="contact-info-title mb-4">Let's Talk</h5>
+
+          @for (item of contactItems; track item.label) {
+            <a [href]="item.href" [target]="item.external ? '_blank' : '_self'" class="contact-info-item">
+              <div class="contact-icon-wrap">
+                <i class="bi" [class]="item.icon"></i>
+              </div>
+              <div>
+                <div class="contact-item-label">{{ item.label }}</div>
+                <div class="contact-item-value">{{ item.value }}</div>
+              </div>
+            </a>
+          }
+        </div>
+
+        <div class="d-flex gap-3 mt-4">
+          <a [href]="data.personal.github" target="_blank" class="social-pill">
+            <i class="bi bi-github me-2"></i>GitHub
+          </a>
+          <a [href]="data.personal.linkedin" target="_blank" class="social-pill">
+            <i class="bi bi-linkedin me-2"></i>LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Form Column -->
+      <div class="col-lg-6">
+
+        @if (submitStatus() === 'success') {
+          <div class="status-msg status-success mb-4">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            Message sent! I'll get back to you soon.
+          </div>
+        }
+
+        @if (submitStatus() === 'error') {
+          <div class="status-msg status-error mb-4">
+            <i class="bi bi-exclamation-circle-fill me-2"></i>
+            Something went wrong. Email me at {{ data.personal.email }}
+          </div>
+        }
+
+        <form class="contact-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div class="row g-3">
+
+            <div class="col-sm-6">
+              <label class="form-label-custom">Full Name *</label>
+              <input type="text" class="form-input" placeholder="John Doe"
+                name="name" ngModel required>
+            </div>
+
+            <div class="col-sm-6">
+              <label class="form-label-custom">Email Address *</label>
+              <input type="email" class="form-input" placeholder="john@example.com"
+                name="email" ngModel required>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label-custom">Phone (optional)</label>
+              <input type="tel" class="form-input" placeholder="+91 XXXXXXXXXX"
+                name="phone" ngModel>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label-custom">Subject</label>
+              <input type="text" class="form-input" placeholder="Project enquiry / Job opportunity"
+                name="subject" ngModel>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label-custom">Message *</label>
+              <textarea class="form-input" rows="5"
+                placeholder="Tell me about your project or opportunity..."
+                name="message" ngModel required></textarea>
+            </div>
+
+            <div class="col-12">
+              <button type="submit" class="btn btn-send w-100"
+                [disabled]="f.invalid || submitStatus() === 'loading'">
+                @if (submitStatus() === 'loading') {
+                  <span class="spinner me-2"></span>Sending...
+                } @else {
+                  <i class="bi bi-send-fill me-2"></i>Send Message
+                }
+              </button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

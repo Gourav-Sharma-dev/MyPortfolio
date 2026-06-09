@@ -1,0 +1,89 @@
+/* ── Certification card ────────────────────────────── */
+.cert-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 32px 24px;
+  transition: all 0.3s;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.cert-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--cert-color) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cert-color) 25%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--cert-color);
+  margin: 0 auto;
+}
+
+.cert-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.cert-issuer {
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.cert-year {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* ── Achievement card ──────────────────────────────── */
+.ach-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 28px 22px;
+  transition: all 0.3s;
+  border-top: 3px solid var(--ach-color);
+}
+
+.ach-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.ach-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--ach-color) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ach-color) 25%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--ach-color);
+}
+
+.ach-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.ach-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}

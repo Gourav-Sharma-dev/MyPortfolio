@@ -1,0 +1,108 @@
+<section id="experience" class="section-pad section-alt">
+  <div class="container">
+
+    <div class="section-header text-center mb-5">
+      <span class="section-badge">My Journey</span>
+      <h2 class="section-title">Work Experience</h2>
+      <p class="section-subtitle">Professional experience building enterprise solutions</p>
+    </div>
+
+    <!-- ── Tab Pills ── -->
+    <div class="exp-pill-row mb-4">
+      @for (exp of data.experiences; track exp.role; let i = $index) {
+        <button class="exp-pill" [class.active]="activeTab() === i" (click)="activeTab.set(i)">
+          <i class="bi me-2" [class]="exp.type === 'job' ? 'bi-briefcase-fill' : 'bi-person-workspace'"></i>
+          {{ exp.type === 'job' ? 'Software Engineer' : 'Internship' }}
+          <span class="pill-year">{{ exp.period.split(' - ')[0] }}</span>
+        </button>
+      }
+    </div>
+
+    <!-- ── Experience Card ── -->
+    @for (exp of data.experiences; track exp.role; let i = $index) {
+      @if (activeTab() === i) {
+        <div class="exp-card">
+
+          <!-- Header band -->
+          <div class="exp-header" [class.header-job]="exp.type === 'job'" [class.header-intern]="exp.type === 'intern'">
+            <div class="exp-header-left">
+              <div class="exp-logo-circle" [class.logo-job]="exp.type === 'job'" [class.logo-intern]="exp.type === 'intern'">
+                <i class="bi" [class]="exp.type === 'job' ? 'bi-briefcase-fill' : 'bi-person-workspace'"></i>
+              </div>
+              <div>
+                <div class="exp-role-title">{{ exp.role }}</div>
+                <div class="exp-company-line">
+                  <span class="exp-company-name">{{ exp.company }}</span>
+                  <span class="exp-sep">·</span>
+                  <span class="exp-location"><i class="bi bi-geo-alt me-1"></i>{{ exp.location }}</span>
+                  <span class="exp-sep">·</span>
+                  <span class="exp-period-text"><i class="bi bi-calendar3 me-1"></i>{{ exp.period }}</span>
+                </div>
+              </div>
+            </div>
+            <span class="emp-badge" [class.badge-ft]="exp.type === 'job'" [class.badge-int]="exp.type === 'intern'">
+              {{ exp.type === 'job' ? '💼 Full-time' : '🎓 Internship' }}
+            </span>
+          </div>
+
+          <!-- Body -->
+          <div class="exp-body">
+
+            <!-- Project block -->
+            @if (exp.project) {
+              <div class="exp-project-block mb-4">
+                <div class="exp-project-label"><i class="bi bi-layers-fill me-2"></i>Project</div>
+                <div class="exp-project-name">{{ exp.project }}</div>
+                @if (exp.projectDesc) {
+                  <p class="exp-project-desc">{{ exp.projectDesc }}</p>
+                }
+              </div>
+            }
+
+            <!-- Contributions -->
+            <div class="exp-contributions-label mb-3">
+              <i class="bi bi-patch-check-fill me-2"></i>Key Contributions
+            </div>
+            <div class="exp-points-grid">
+              @for (point of exp.points; track point) {
+                <div class="exp-point">
+                  <i class="bi bi-check2-circle exp-check"></i>
+                  <span [innerHTML]="point"></span>
+                </div>
+              }
+            </div>
+
+          </div>
+        </div>
+      }
+    }
+
+    <!-- ── Education ── -->
+    <div class="section-header text-center mt-5 mb-4">
+      <span class="section-badge">Background</span>
+      <h2 class="section-title">Education</h2>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      @for (edu of data.education; track edu.degree) {
+        <div class="col-md-6 col-lg-5">
+          <div class="edu-card h-100">
+            <div class="edu-icon-wrap mb-3">
+              <i class="bi" [class]="edu.icon"></i>
+            </div>
+            <h5 class="edu-degree">{{ edu.degree }}</h5>
+            <div class="edu-inst">{{ edu.institution }}</div>
+            <div class="edu-meta d-flex flex-wrap gap-3 mt-2">
+              <span><i class="bi bi-geo-alt me-1"></i>{{ edu.location }}</span>
+              <span><i class="bi bi-calendar me-1"></i>{{ edu.period }}</span>
+              @if (edu.cgpa) {
+                <span class="cgpa-badge"><i class="bi bi-star-fill me-1"></i>CGPA: {{ edu.cgpa }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,356 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--hero-bg);
+  padding-top: 70px;
+}
+
+/* ── Background shapes ─────────────────────────────── */
+.hero-bg-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.18;
+}
+
+.shape-1 {
+  width: 560px;
+  height: 560px;
+  background: var(--accent);
+  top: -120px;
+  right: -120px;
+  animation: float 8s ease-in-out infinite;
+}
+
+.shape-2 {
+  width: 340px;
+  height: 340px;
+  background: var(--accent2);
+  bottom: 80px;
+  left: -100px;
+  animation: float 6s ease-in-out infinite reverse;
+}
+
+.shape-3 {
+  width: 220px;
+  height: 220px;
+  background: var(--accent3);
+  top: 50%;
+  left: 40%;
+  animation: float 10s ease-in-out infinite 2s;
+}
+
+/* ── Greeting badge ────────────────────────────────── */
+.badge-greeting {
+  background: var(--accent-subtle);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--accent-border);
+  letter-spacing: 0.5px;
+}
+
+/* ── Name / title / tagline ────────────────────────── */
+.hero-name {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.hero-title {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.hero-tagline {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.hero-summary {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 560px;
+}
+
+/* ── CTA Buttons ───────────────────────────────────── */
+.btn-primary-custom {
+  background: var(--accent);
+  color: #fff;
+  border: 2px solid var(--accent);
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-primary-custom:hover {
+  background: transparent;
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--accent-shadow);
+}
+
+.btn-outline-custom {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-outline-custom:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.btn-ghost-custom {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border: 2px solid transparent;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-ghost-custom:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ── Social links ──────────────────────────────────── */
+.social-link {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* ── Avatar ────────────────────────────────────────── */
+.hero-avatar-wrapper {
+  position: relative;
+}
+
+.hero-avatar {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-inner {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 60px var(--accent-shadow);
+  overflow: hidden;
+}
+
+.avatar-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.avatar-initials {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -2px;
+}
+
+/* ── Spinning rings ────────────────────────────────── */
+.avatar-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px dashed;
+  animation: spin 20s linear infinite;
+}
+
+.ring-1 {
+  width: 260px;
+  height: 260px;
+  border-color: var(--accent);
+  opacity: 0.3;
+}
+
+.ring-2 {
+  width: 300px;
+  height: 300px;
+  border-color: var(--accent2);
+  opacity: 0.2;
+  animation-direction: reverse;
+  animation-duration: 30s;
+}
+
+/* ── Floating tech badges ──────────────────────────── */
+.floating-badge {
+  position: absolute;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  box-shadow: 0 4px 15px var(--shadow);
+  white-space: nowrap;
+}
+
+.badge-angular {
+  top: 20px;
+  right: -10px;
+  color: var(--accent);
+  animation: floatBadge 3s ease-in-out infinite;
+}
+
+.badge-dotnet {
+  bottom: 40px;
+  left: -10px;
+  color: var(--accent2);
+  animation: floatBadge 3s ease-in-out infinite 1s;
+}
+
+.badge-blazor {
+  top: 20px;
+  left: 20px;
+  color: var(--accent2);
+  animation: floatBadge 3s ease-in-out infinite 2s;
+}
+.badge-sql {
+  bottom: 10px;
+  right: 10px;
+  color: var(--accent3);
+  animation: floatBadge 3s ease-in-out infinite 3s;
+}
+
+/* ── Stat cards ────────────────────────────────────── */
+.stat-card {
+  padding: 20px 10px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.stat-icon {
+  font-size: 1.8rem;
+  color: var(--accent);
+  display: block;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* ── Scroll hint ───────────────────────────────────── */
+.scroll-hint {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-down {
+  color: var(--text-muted);
+  font-size: 1.3rem;
+  text-decoration: none;
+  animation: bounce 2s ease-in-out infinite;
+  display: block;
+}
+
+/* ── Animations ────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-30px); }
+}
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up { animation: fadeInUp 0.6s ease both; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+
+.blinking-cursor {
+  animation: blink 1s steps(1) infinite;
+  opacity: 1;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}

@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg fixed-top" [class.scrolled]="scrolled()">
+  <div class="container-fluid px-3">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+      <img src="logo.svg" alt="GS Logo" class="nav-logo" />
+      <span class="brand-name">Gourav Sharma</span>
+    </a>
+
+    <button class="navbar-toggler border-0" type="button"
+      (click)="menuOpen.set(!menuOpen())">
+      <i class="bi fs-4 text-white" [class.bi-list]="!menuOpen()" [class.bi-x-lg]="menuOpen()"></i>
+    </button>
+
+    <div class="navbar-collapse" [class.collapse]="!menuOpen()" [class.show]="menuOpen()">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        @for (item of navItems; track item.id) {
+          <li class="nav-item">
+            <a class="nav-link px-3 py-2" [href]="'#' + item.id" (click)="menuOpen.set(false)">{{ item.label }}</a>
+          </li>
+        }
+      </ul>
+
+      <!-- Theme Switcher -->
+      <div class="ms-lg-3 mt-2 mt-lg-0 d-flex align-items-center gap-2">
+        <div class="theme-switcher d-flex gap-1 p-1 rounded-pill">
+          @for (opt of themeOptions; track opt.value) {
+            <button
+              class="btn btn-sm theme-btn rounded-pill px-2"
+              [class.active]="themeService.theme() === opt.value"
+              (click)="themeService.setTheme(opt.value)"
+              [title]="opt.label">
+              <i class="bi" [class]="opt.icon"></i>
+            </button>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
